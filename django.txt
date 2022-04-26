@@ -1,0 +1,77 @@
+#Instalando a virtual env
+
+$ sudo pip install virtualenv
+
+#criando uma virual env para o projeto:
+
+$ virtualenv myenv  //criando a virtualenv de nome myenv
+
+$ source myenv/bin/activate  //Ativando a virtualenv criada
+
+#Instalando o django:
+
+$ sudo pip install django
+
+$ django-admin --version  //verifica se foi instalado e a versão
+
+# Criando o projeto:
+
+$ django-admin startproject testeprojeto
+
+# Rodando o servidor do django:
+
+$ sudo python manage.py runserver  //Obs: rodar o comando dentro da pasta do projeto
+
+#Criando os app:
+$ django-admin startapp usuarios // Criação do app usuarios no projeto
+
+Obs: Após criado, registrar em setting.py (INSTALLED_APPS)
+
+'usuarios',
+
+# criando as rotas(dos apps) para as views:
+
+1) Criar um arquivo urls na pasta do app
+
+2) copiar instruções da urls do projeto para esse arquivo;
+
+3)colocar o import da view
+
+from . import views
+
+4) criar a classe
+
+urlpatterns = [
+    path('helloworld/',views.helloworld),
+]
+
+
+5) colocando o include e as urls de app(tasks)
+
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('tasks.urls')) //página inicial 
+]
+
+# COLOCANDO LINKS PARA O CSS E JS
+
+1) criar a pasta padrão 'static' no app
+2) criar as paastas de css e js dentro de 'static:
+3) fazer o 'include' de 'static' na página base.html
+    {% load static %}
+4) criar os links do css e js:
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <script src="{% static 'js/sript.js' %}"></script>
+
+5) reiniciar o servidor 
+$ python manage.py runserver
+
+
+
+
+
+
+
+
