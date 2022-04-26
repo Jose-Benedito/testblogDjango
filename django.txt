@@ -62,8 +62,8 @@ urlpatterns = [
 3) fazer o 'include' de 'static' na página base.html
     {% load static %}
 4) criar os links do css e js:
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
-      <script src="{% static 'js/sript.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <script src="{% static 'js/script.js' %}"></script>
 
 5) reiniciar o servidor 
 $ python manage.py runserver
