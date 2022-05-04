@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'about',
     'tasks',
     'users',
+    'testblog',
 ]
 
 MIDDLEWARE = [
