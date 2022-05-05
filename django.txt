@@ -21,7 +21,7 @@ $ django-admin startproject testeprojeto
 # Rodando o servidor do django:
 
 $ sudo python manage.py runserver  //Obs: rodar o comando dentro da pasta do projeto
-
+OBS: caso de erro em rodaro servidor: reinstale o django (pip install django)
 #Criando os app:
 $ django-admin startapp usuarios // Criação do app usuarios no projeto
 
@@ -68,10 +68,19 @@ urlpatterns = [
 5) reiniciar o servidor 
 $ python manage.py runserver
 
+#### MODELS #############
+1) extender o Model na classe nos parâmetros da classe
+2) criar as variáveis com os tipos dos campos //ver documentação ou modelo
+3) rodar os comandos (Migrations) para gerar o model:
 
+$ python manage.py makemigrations //cria na pasta migrations
 
+$ python manage.py migrate //cria no banco as tabelas
+OBS: problemas com a migrate mudar as permisões do (db,sqlite) 
+$ sudo chmod 777 db.sqlite
 
-
+## CRIANDO UM USUÁRIO ADMIN ###
+$ pyton manage.py createsuperuser
 
 
 
